@@ -46,7 +46,10 @@
             sessionIframe.postMessage('YO YO YO YO YO YO YO', '*');
         }, 5000);
 
-        window.addEventListener('message', function(msg) { console.log('@@@ parent received message', msg)})
+        window.addEventListener('message', function(event) {
+            if (event.origin === 'https://gilad-events.ext.clusters.bizzabo.com'){
+                console.log('@@@ parent received message', event.data);
+            }})
     };
 </script>
 </body>

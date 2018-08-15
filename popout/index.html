@@ -47,7 +47,7 @@
         }, 5000);
 
         window.addEventListener('message', function(event) {
-            if (event.data.includes('[iFrameSizer]')){
+            if (!event.data.includes('[iFrameSizer]')){
                 console.log('@@@ parent received message', event.data);
             }})
     };

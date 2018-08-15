@@ -42,9 +42,9 @@
     window.onload = function() {
         var sessionIframe = document.getElementsByTagName("iframe")[0].contentWindow;
 
-        setInterval(function(){
-            sessionIframe.postMessage('yo yo yo', '*');
-        }, 2000);
+        setTimeout(function(){
+            sessionIframe.postMessage('YO YO YO YO YO YO YO', '*');
+        }, 5000);
 
         window.addEventListener('message', function(msg) { console.log('@@@ parent received message', msg)})
     };

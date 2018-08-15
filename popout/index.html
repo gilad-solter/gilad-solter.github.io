@@ -47,8 +47,8 @@
         }, 5000);
 
         window.addEventListener('message', function(event) {
-            if (event.origin === 'https://gilad-events.ext.clusters.bizzabo.com'){
-                console.log('@@@ parent received message', event);
+            if (event.data.includes('[iFrameSizer]')){
+                console.log('@@@ parent received message', event.data);
             }})
     };
 </script>

@@ -12,7 +12,12 @@
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur cum eaque excepturi expedita fugiat magnam molestias officiis reprehenderit sunt suscipit totam ullam velit, voluptas. Doloremque est ipsam pariatur tempora unde.</p>
 
 <div style="position: fixed; top: 0; right: 0; width: 500px; height: 900px;">
-    <iframe src="https://gilad-events.ext.clusters.bizzabo.com/6/agenda/sessionPreview/335?widget=true" width="500" height="900" frameborder="0"></iframe>
+    <iframe src="https://gilad-events.ext.clusters.bizzabo.com/6/agenda/sessionPreview/335?widget=true"
+            width="500"
+            height="900"
+            frameborder="0"
+            style="background: none transparent">
+    </iframe>
 </div>
 
 <!-- Bizzabo Web Agenda Begin -->
@@ -33,6 +38,16 @@
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus explicabo mollitia odit sapiente soluta. Alias consequatur debitis ea eius est et eveniet hic inventore iste laudantium maxime, perspiciatis sapiente? Officia.</p>
 
 
+<script>
+    window.onload = function() {
+        var sessionIframe = document.getElementsByTagName("iframe")[0].contentWindow;
 
+        setInterval(function(){
+            sessionIframe.postMessage('yo yo yo', '*');
+        }, 2000);
+
+        window.addEventListener('message', function(msg) { console.log('@@@ parent received message', msg)})
+    };
+</script>
 </body>
 </html>

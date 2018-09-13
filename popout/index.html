@@ -41,8 +41,9 @@
         if (event.data && (event.data = 'ticketWidgetReady')) {
             console.log('@@@ event', 'ticketWidgetReady');
             var frameWindows = document.getElementsByClassName('bizzabo-tickets-widget');
+            console.log('@@@ frameWindows', frameWindows);
             for (var i = 0; i < frameWindows.length; i++) {
-                console.log('@@@ i:', i);
+                console.log('@@@ i: ', i);
                 var iframeSelector = frameWindows[i].querySelector('iframe');
                 var data = {
                     type: 'clientId', val: clientId
